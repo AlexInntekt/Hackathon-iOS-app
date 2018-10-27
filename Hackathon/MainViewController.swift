@@ -8,10 +8,11 @@
 
 import UIKit
 
-var url = URL(string: "https://smarthackathon.azurewebsites.net/")
+var url = firstURL
 var webV:UIWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
 var urlr = URLRequest(url: url!)
 
+let gobackButton = UIButton(frame: CGRect(x: 20, y: 600, width: 50, height: 50))
 
 
 class MainViewController: UIViewController {
@@ -22,15 +23,38 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
         //webV.load(URLRequest(url: url!))
         webV.loadRequest(urlr)
         //webV.delegate = self as! UIWebViewDelegate;
         self.view.addSubview(webV)
         
+        
+    
+        
+        
+        //button.backgroundColor = .green
+        //button.setTitle("Test Button", for: [])
+        gobackButton.setImage(#imageLiteral(resourceName: "goback"), for: .normal)
+        gobackButton.imageView?.contentMode = .scaleAspectFit
+        gobackButton.addTarget(self, action: #selector(goBack), for: .touchDown)
+        gobackButton.isHidden = true
+        self.view.addSubview(gobackButton)
+        
+        
         setup()
+        
     }
+    
+    @objc func goBack()
+    {
+        if webV.canGoBack
+        {
+            webV.goBack()
+        }
+    }
+    
+
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -110,6 +134,7 @@ extension MainViewController: RHSideButtonsDelegate {
             print("Yahoo")
             url = URL(string: "https://www.yahoo.com")
             urlr = URLRequest(url: url!)
+            //history.append(url!)
             webV.loadRequest(urlr)
         }
         if(index==1)
@@ -117,6 +142,7 @@ extension MainViewController: RHSideButtonsDelegate {
             print("Linkedin")
             url = URL(string: "https://www.linkedin.com")
             urlr = URLRequest(url: url!)
+
             webV.loadRequest(urlr)
         }
         if(index==0)
@@ -124,6 +150,7 @@ extension MainViewController: RHSideButtonsDelegate {
             print("Youtube")
             url = URL(string: "https://www.youtube.com")
             urlr = URLRequest(url: url!)
+     
             webV.loadRequest(urlr)
         }
         

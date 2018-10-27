@@ -8,7 +8,7 @@
 
 import UIKit
 
-var url = URL(string: "https://stackoverflow.com/questions/32733431/wkwebview-not-in-xcode")
+var url = URL(string: "https://smarthackathon.azurewebsites.net/")
 var webV:UIWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
 var urlr = URLRequest(url: url!)
 

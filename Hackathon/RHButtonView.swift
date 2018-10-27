@@ -70,7 +70,8 @@ public class RHButtonView: UIView, RHButtonViewConfigProtocol {
         super.layoutSubviews()
         
         // View Appearance
-        layer.cornerRadius = bounds.width/2
+        //layer.cornerRadius = 50 //bounds.width/2
+        
         
         //Overlay Layer
         overlayView.frame = bounds

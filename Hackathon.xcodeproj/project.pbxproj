@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA70C14C21847FBD001D7904 /* RHTriggerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70C14621847FBC001D7904 /* RHTriggerButtonView.swift */; };
+		FA70C14D21847FBD001D7904 /* RHButtonViewConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70C14721847FBC001D7904 /* RHButtonViewConfigProtocol.swift */; };
+		FA70C14E21847FBD001D7904 /* RHSideButtonAnimatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70C14821847FBC001D7904 /* RHSideButtonAnimatorProtocol.swift */; };
+		FA70C14F21847FBD001D7904 /* RHButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70C14921847FBD001D7904 /* RHButtonView.swift */; };
+		FA70C15021847FBD001D7904 /* RHSideButtonAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70C14A21847FBD001D7904 /* RHSideButtonAnimator.swift */; };
+		FA70C15121847FBD001D7904 /* RHSideButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70C14B21847FBD001D7904 /* RHSideButtons.swift */; };
+		FA70C158218481C0001D7904 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70C156218481C0001D7904 /* MainViewController.swift */; };
+		FA70C159218481C0001D7904 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70C157218481C0001D7904 /* MainView.swift */; };
+		FA70C15B218481DD001D7904 /* ButtonsDemoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70C15A218481DD001D7904 /* ButtonsDemoPresenter.swift */; };
 		FA8EB75821846524008AAFDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EB75721846524008AAFDF /* AppDelegate.swift */; };
 		FA8EB75A21846524008AAFDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EB75921846524008AAFDF /* ViewController.swift */; };
 		FA8EB75D21846524008AAFDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8EB75B21846524008AAFDF /* Main.storyboard */; };
@@ -35,6 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA70C14621847FBC001D7904 /* RHTriggerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RHTriggerButtonView.swift; sourceTree = "<group>"; };
+		FA70C14721847FBC001D7904 /* RHButtonViewConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RHButtonViewConfigProtocol.swift; sourceTree = "<group>"; };
+		FA70C14821847FBC001D7904 /* RHSideButtonAnimatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RHSideButtonAnimatorProtocol.swift; sourceTree = "<group>"; };
+		FA70C14921847FBD001D7904 /* RHButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RHButtonView.swift; sourceTree = "<group>"; };
+		FA70C14A21847FBD001D7904 /* RHSideButtonAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RHSideButtonAnimator.swift; sourceTree = "<group>"; };
+		FA70C14B21847FBD001D7904 /* RHSideButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RHSideButtons.swift; sourceTree = "<group>"; };
+		FA70C156218481C0001D7904 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FA70C157218481C0001D7904 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FA70C15A218481DD001D7904 /* ButtonsDemoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsDemoPresenter.swift; sourceTree = "<group>"; };
 		FA8EB75421846524008AAFDF /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8EB75721846524008AAFDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8EB75921846524008AAFDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +123,15 @@
 				FA8EB76121846526008AAFDF /* Assets.xcassets */,
 				FA8EB76321846526008AAFDF /* LaunchScreen.storyboard */,
 				FA8EB76621846526008AAFDF /* Info.plist */,
+				FA70C157218481C0001D7904 /* MainView.swift */,
+				FA70C15A218481DD001D7904 /* ButtonsDemoPresenter.swift */,
+				FA70C156218481C0001D7904 /* MainViewController.swift */,
+				FA70C14921847FBD001D7904 /* RHButtonView.swift */,
+				FA70C14721847FBC001D7904 /* RHButtonViewConfigProtocol.swift */,
+				FA70C14A21847FBD001D7904 /* RHSideButtonAnimator.swift */,
+				FA70C14821847FBC001D7904 /* RHSideButtonAnimatorProtocol.swift */,
+				FA70C14B21847FBD001D7904 /* RHSideButtons.swift */,
+				FA70C14621847FBC001D7904 /* RHTriggerButtonView.swift */,
 				FA8EB75E21846524008AAFDF /* Hackathon.xcdatamodeld */,
 			);
 			path = Hackathon;
@@ -260,8 +287,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8EB75A21846524008AAFDF /* ViewController.swift in Sources */,
+				FA70C14E21847FBD001D7904 /* RHSideButtonAnimatorProtocol.swift in Sources */,
+				FA70C14C21847FBD001D7904 /* RHTriggerButtonView.swift in Sources */,
+				FA70C15121847FBD001D7904 /* RHSideButtons.swift in Sources */,
+				FA70C15021847FBD001D7904 /* RHSideButtonAnimator.swift in Sources */,
+				FA70C15B218481DD001D7904 /* ButtonsDemoPresenter.swift in Sources */,
 				FA8EB75821846524008AAFDF /* AppDelegate.swift in Sources */,
+				FA70C14D21847FBD001D7904 /* RHButtonViewConfigProtocol.swift in Sources */,
+				FA70C159218481C0001D7904 /* MainView.swift in Sources */,
 				FA8EB76021846524008AAFDF /* Hackathon.xcdatamodeld in Sources */,
+				FA70C14F21847FBD001D7904 /* RHButtonView.swift in Sources */,
+				FA70C158218481C0001D7904 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

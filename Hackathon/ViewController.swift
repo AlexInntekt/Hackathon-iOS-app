@@ -26,6 +26,25 @@ class ViewController: UIViewController
         let url = URL(string: "https://stackoverflow.com/questions/32733431/wkwebview-not-in-xcode")
         webk.load(URLRequest(url: url!))
        
+        
+        
+        
+        let myNewView=UIView(frame: CGRect(x: 10, y: 100, width: 300, height: 200))
+        
+        // Change UIView background colour
+        myNewView.backgroundColor=UIColor.lightGray
+        
+        // Add rounded corners to UIView
+        myNewView.layer.cornerRadius=25
+        
+        // Add border to UIView
+        myNewView.layer.borderWidth=2
+        
+        // Change UIView Border Color to Red
+        myNewView.layer.borderColor = UIColor.red.cgColor
+        
+        // Add UIView as a Subview
+        self.view.addSubview(myNewView)
     }
 
     override func didReceiveMemoryWarning()

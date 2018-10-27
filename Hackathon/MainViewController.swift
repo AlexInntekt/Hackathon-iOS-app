@@ -8,6 +8,11 @@
 
 import UIKit
 
+var url = URL(string: "https://stackoverflow.com/questions/32733431/wkwebview-not-in-xcode")
+var webV:UIWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+var urlr = URLRequest(url: url!)
+
+
 
 class MainViewController: UIViewController {
 
@@ -17,10 +22,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let webV:UIWebView = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
-        let url = URL(string: "https://stackoverflow.com/questions/32733431/wkwebview-not-in-xcode")
-        let urlr = URLRequest(url: url!)
         
         //webV.load(URLRequest(url: url!))
         webV.loadRequest(urlr)
@@ -106,7 +108,28 @@ extension MainViewController: RHSideButtonsDelegate {
         if(index==2)
         {
             print("Yahoo")
+            url = URL(string: "https://www.yahoo.com")
+            urlr = URLRequest(url: url!)
+            webV.loadRequest(urlr)
         }
+        if(index==1)
+        {
+            print("Linkedin")
+            url = URL(string: "https://www.linkedin.com")
+            urlr = URLRequest(url: url!)
+            webV.loadRequest(urlr)
+        }
+        if(index==0)
+        {
+            print("Youtube")
+            url = URL(string: "https://www.youtube.com")
+            urlr = URLRequest(url: url!)
+            webV.loadRequest(urlr)
+        }
+        
+       
+        
+        
         
        
     }

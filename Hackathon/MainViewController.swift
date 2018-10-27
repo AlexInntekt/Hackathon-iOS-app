@@ -102,8 +102,17 @@ class MainViewController: UIViewController {
         sideButtonsView.delegate = self
         sideButtonsView.dataSource = self
         
+        
+        
         for index in 1...3 {
             buttonsArr.append(generateButton(withImgName: "icon_\(index)"))
+            
+            
+            
+            //buttonsArr.append(generateButton(withImgName: createFinalImageText()))
+            
+            //buttonsArr[0].imgView?.image = createFinalImageText(drawText: "lalalala", inImage: #imageLiteral(resourceName: "icon_1"), atPoint: CGPoint(x:0, y:0))
+            
         }
         
         castView().set(sideButtonsView: sideButtonsView)
@@ -167,7 +176,8 @@ extension MainViewController: RHSideButtonsDelegate {
        
     }
     
-    func sideButtons(_ sideButtons: RHSideButtons, didTriggerButtonChangeStateTo state: RHButtonState) {
+    func sideButtons(_ sideButtons: RHSideButtons, didTriggerButtonChangeStateTo state: RHButtonState)
+    {
         print("🍭 Trigger button")
         
         if gobackButton.isHidden
@@ -178,8 +188,87 @@ extension MainViewController: RHSideButtonsDelegate {
         {
             gobackButton.isHidden = true
         }
+    }
+    
+    
+    func createFinalImageText(drawText: NSString, inImage: UIImage, atPoint: CGPoint) -> UIImage{
         
-       
+        // Setup the font specific variables
+        var textColor = UIColor.white
+        var textFont = UIFont(name: "Helvetica Bold", size: 12)!
+        
+        // Setup the image context using the passed image
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(inImage.size, false, scale)
+        
+        // Setup the font attributes that will be later used to dictate how the text should be drawn
+        let color = [ NSAttributedStringKey.foregroundColor: UIColor.blue ]
+        let font = [ NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 36.0)! ]
+       // let attributes = [font,color] as [NSAttributedStringKey]
+        
+        
+        // Put the image into a rectangle as large as the original image
+        inImage.draw(in: CGRect(x:0, y:0, width:inImage.size.width, height:inImage.size.height))
+        
+        // Create a point within the space that is as bit as the image
+        var rect = CGRect(x:atPoint.x, y:atPoint.y, width:inImage.size.width, height:inImage.size.height)
+        
+        // Draw the text into an image
+        drawText.draw(in: rect, withAttributes: font)
+        
+        
+        // Create a new image out of the images we have created
+        var newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        // End the context now that we have the image we need
+        UIGraphicsEndImageContext()
+        
+        //Pass the image back up to the caller
+        return newImage!
+        
+    }
+    
+//
+//    func createFinalImageText () -> UIImage? {
+//
+//        let image = #imageLiteral(resourceName: "icon_3")
+//
+//        let viewToRender = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)) // here you can set the actual image width : image.size.with ?? 0 / height : image.size.height ?? 0
+//
+//        let imgView = UIImageView(frame: viewToRender.frame)
+//
+//        imgView.image = image
+//
+//        viewToRender.addSubview(imgView)
+//
+//        let textImgView = UIImageView(frame: viewToRender.frame)
+//
+//        textImgView.image = imageFrom(text: "Example text", size: viewToRender.frame.size)
+//
+//        viewToRender.addSubview(textImgView)
+//
+//        UIGraphicsBeginImageContextWithOptions(viewToRender.frame.size, false, 0)
+//        viewToRender.layer.render(in: UIGraphicsGetCurrentContext()!)
+//        let finalImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//
+//        return finalImage
+//    }
+    
+    
+    func imageFrom(text: String , size:CGSize) -> UIImage {
+        
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let img = renderer.image { ctx in
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .center
+            
+            //let attrs = [String: UIFont(name: "HelveticaNeue", size: 36)!, NSForegroundColorAttributeName: UIColor.white, NSParagraphStyleAttributeName: paragraphStyle]
+            
+            text.draw(with: CGRect(x: 0, y: size.height / 2, width: size.width, height: size.height), options: .usesLineFragmentOrigin, attributes: nil, context: nil)
+            
+        }
+        return img
     }
 }
 

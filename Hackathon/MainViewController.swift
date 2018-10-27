@@ -28,8 +28,12 @@ class MainViewController: UIViewController {
         //webV.delegate = self as! UIWebViewDelegate;
         self.view.addSubview(webV)
         
-        
-    
+//        var label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+//        label.center = CGPoint(x: 160, y: 284)
+//        label.textAlignment = NSTextAlignment.center
+//        label.text = "I'am a test label"
+//        self.view.addSubview(label)
+//
         
         
         //button.backgroundColor = .green
@@ -38,7 +42,7 @@ class MainViewController: UIViewController {
         gobackButton.imageView?.contentMode = .scaleAspectFit
         gobackButton.addTarget(self, action: #selector(goBack), for: .touchDown)
         gobackButton.isHidden = true
-        gobackButton.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        gobackButton.backgroundColor = UIColor(white: 1, alpha: 0.8)
         gobackButton.layer.cornerRadius = gobackButton.frame.width/2
         self.view.addSubview(gobackButton)
         

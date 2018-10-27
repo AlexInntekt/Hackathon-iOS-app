@@ -173,6 +173,24 @@ extension MainViewController: RHSideButtonsDelegate
         task.resume()
     }
     
+    
+    func promptForAnswer()
+    {
+        let ac = UIAlertController(title: "Enter answer", message: nil, preferredStyle: .alert)
+        ac.addTextField()
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac] _ in
+            let answer = ac.textFields![0].text
+            
+            self.POST( Int(answer!)! )
+            // do something interesting with "answer" here
+        }
+        
+        ac.addAction(submitAction)
+        
+        present(ac, animated: true)
+    }
+    
     func sideButtons(_ sideButtons: RHSideButtons, didSelectButtonAtIndex index: Int) {
         print("🍭 button index tapped: \(index)")
         
@@ -180,7 +198,9 @@ extension MainViewController: RHSideButtonsDelegate
         {
             print("CALL ELEVATOR")
             
-            POST(0)
+            //POST(0)
+            
+            promptForAnswer()
             
             gobackButton.isHidden = true
           

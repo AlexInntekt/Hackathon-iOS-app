@@ -38,6 +38,8 @@ class MainViewController: UIViewController {
         gobackButton.imageView?.contentMode = .scaleAspectFit
         gobackButton.addTarget(self, action: #selector(goBack), for: .touchDown)
         gobackButton.isHidden = true
+        gobackButton.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        gobackButton.layer.cornerRadius = gobackButton.frame.width/2
         self.view.addSubview(gobackButton)
         
         
@@ -134,7 +136,7 @@ extension MainViewController: RHSideButtonsDelegate {
             print("Yahoo")
             url = URL(string: "https://www.yahoo.com")
             urlr = URLRequest(url: url!)
-            //history.append(url!)
+            gobackButton.isHidden = true
             webV.loadRequest(urlr)
         }
         if(index==1)
@@ -142,7 +144,7 @@ extension MainViewController: RHSideButtonsDelegate {
             print("Linkedin")
             url = URL(string: "https://www.linkedin.com")
             urlr = URLRequest(url: url!)
-
+            gobackButton.isHidden = true
             webV.loadRequest(urlr)
         }
         if(index==0)
@@ -150,7 +152,7 @@ extension MainViewController: RHSideButtonsDelegate {
             print("Youtube")
             url = URL(string: "https://www.youtube.com")
             urlr = URLRequest(url: url!)
-     
+            gobackButton.isHidden = true
             webV.loadRequest(urlr)
         }
         
@@ -163,6 +165,17 @@ extension MainViewController: RHSideButtonsDelegate {
     
     func sideButtons(_ sideButtons: RHSideButtons, didTriggerButtonChangeStateTo state: RHButtonState) {
         print("🍭 Trigger button")
+        
+        if gobackButton.isHidden
+        {
+            gobackButton.isHidden = false
+        }
+        else
+        {
+            gobackButton.isHidden = true
+        }
+        
+       
     }
 }
 

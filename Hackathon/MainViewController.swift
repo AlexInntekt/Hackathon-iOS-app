@@ -176,13 +176,32 @@ extension MainViewController: RHSideButtonsDelegate
     
     func promptForAnswer()
     {
-        let ac = UIAlertController(title: "Enter answer", message: nil, preferredStyle: .alert)
+        let ac = UIAlertController(title: "Introdu etajul", message: nil, preferredStyle: .alert)
         ac.addTextField()
         
-        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac] _ in
-            let answer = ac.textFields![0].text
+        let submitAction = UIAlertAction(title: "Cheama liftul", style: .default) { [unowned ac] _ in
             
-            self.POST( Int(answer!)! )
+            if ac.textFields![0].text != "" && ac.textFields![0].text != nil
+            {
+               let answer = ac.textFields![0].text
+                
+                if let answ = answer
+                {
+                    if Int(answ) != nil
+                    {
+                          self.POST( Int(answ)! )
+                    }
+                  
+                }
+                
+//                if Int((answer?)!)? != nil
+//                {
+//
+//                }
+                
+               
+            }
+            
             // do something interesting with "answer" here
         }
         

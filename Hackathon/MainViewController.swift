@@ -174,6 +174,20 @@ extension MainViewController: RHSideButtonsDelegate
     }
     
     
+    func elevatorConfirmation()
+    {
+        let ac = UIAlertController(title: "Confirmat", message: nil, preferredStyle: .alert)
+       
+        let submitAction = UIAlertAction(title: "Okay", style: .default) { [unowned ac] _ in
+
+        }
+         ac.addAction(submitAction)
+        
+        //ac.addAction(submitAction)
+        
+        present(ac, animated: true)
+    }
+    
     func promptForAnswer()
     {
         let ac = UIAlertController(title: "Introdu etajul", message: nil, preferredStyle: .alert)
@@ -190,15 +204,10 @@ extension MainViewController: RHSideButtonsDelegate
                     if Int(answ) != nil
                     {
                           self.POST( Int(answ)! )
+                        self.elevatorConfirmation()
                     }
                   
                 }
-                
-//                if Int((answer?)!)? != nil
-//                {
-//
-//                }
-                
                
             }
             

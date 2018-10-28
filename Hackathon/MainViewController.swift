@@ -104,7 +104,7 @@ class MainViewController: UIViewController {
         
         
         
-        for index in 1...4 {
+        for index in 1...5 {
             buttonsArr.append(generateButton(withImgName: "icon_\(index)"))
             
             
@@ -222,7 +222,9 @@ extension MainViewController: RHSideButtonsDelegate
     func sideButtons(_ sideButtons: RHSideButtons, didSelectButtonAtIndex index: Int) {
         print("🍭 button index tapped: \(index)")
         
-        if(index==3)
+        
+    
+        if(index==4) //5
         {
             print("CALL ELEVATOR")
             
@@ -231,28 +233,38 @@ extension MainViewController: RHSideButtonsDelegate
             promptForAnswer()
             
             gobackButton.isHidden = true
+            
+        }
+        if(index==3) //4
+        {
+            print("complaints")
+            
+            url = URL(string: "https://smarthackathon.azurewebsites.net/alerts")
+            urlr = URLRequest(url: url!)
+            gobackButton.isHidden = true
+            webV.loadRequest(urlr)
           
         }
-        if(index==2)
+        if(index==2) //3
         {
-            print("Yahoo")
-            url = URL(string: "https://www.yahoo.com")
+            print("bookings")
+            url = URL(string: "https://smarthackathon.azurewebsites.net/booking")
             urlr = URLRequest(url: url!)
             gobackButton.isHidden = true
             webV.loadRequest(urlr)
         }
-        if(index==1)
+        if(index==1) //2
         {
-            print("Linkedin")
-            url = URL(string: "https://www.linkedin.com")
+            print("Login")
+            url = URL(string: "https://smarthackathon.azurewebsites.net/login")
             urlr = URLRequest(url: url!)
             gobackButton.isHidden = true
             webV.loadRequest(urlr)
         }
-        if(index==0)
+        if(index==0) //1
         {
-            print("Youtube")
-            url = URL(string: "https://www.youtube.com")
+            print("Home")
+            url = URL(string: "https://smarthackathon.azurewebsites.net")
             urlr = URLRequest(url: url!)
             gobackButton.isHidden = true
             webV.loadRequest(urlr)
